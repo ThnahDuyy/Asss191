@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ASM.iml" filepath="$PROJECT_DIR$/ASM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ASM2_PROG191_GCC19102/ASM2_PROG191_GCC19102.iml" filepath="$PROJECT_DIR$/../ASM2_PROG191_GCC19102/ASM2_PROG191_GCC19102.iml" />
+    </modules>
+  </component>
+</project>
