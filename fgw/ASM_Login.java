@@ -36,7 +36,7 @@ public class ASM_Login extends JFrame
     private void Login(){
         String usr = txtUsername.getText();
         String pwd = txtPassword.getText();
-        if(usr.equals("admin") && pwd.equals("123")){
+        if(usr.equals("admin") && pwd.equals("123123")){
             JOptionPane.showMessageDialog(this,"Welcome to admin");
 //            JOptionPane.showMessageDialog(this, "Hello" + txtUsername.getText());
 //            this.setVisible(fales);
@@ -51,7 +51,7 @@ public class ASM_Login extends JFrame
 
     public static void main(String[] args) {
         JFrame c = new ASM_Login("Login");
-        c.setSize(700,350);
+        c.setSize(600,250);
         c.setLocationRelativeTo(null);
         c.setVisible(true);
 
