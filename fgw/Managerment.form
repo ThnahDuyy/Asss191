@@ -20,7 +20,9 @@
         <children>
           <scrollpane id="7b1ed">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="453" height="317"/>
+              </grid>
             </constraints>
             <properties>
               <background color="-12867136"/>
@@ -59,7 +61,7 @@
         </constraints>
         <properties>
           <foreground color="-16777216"/>
-          <text value="Find"/>
+          <text value="Sreach"/>
         </properties>
       </component>
       <component id="e2411" class="javax.swing.JButton" binding="btnDelete">
@@ -71,7 +73,7 @@
           <text value="Delete"/>
         </properties>
       </component>
-      <component id="c9c4f" class="javax.swing.JLabel" binding="Position">
+      <component id="c9c4f" class="javax.swing.JLabel" binding="Category">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -88,7 +90,7 @@
           <model/>
         </properties>
       </component>
-      <component id="5f20a" class="javax.swing.JLabel" binding="Email">
+      <component id="5f20a" class="javax.swing.JLabel" binding="Price">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -114,7 +116,7 @@
           <text value="New or Old"/>
         </properties>
       </component>
-      <component id="42d49" class="javax.swing.JRadioButton" binding="rbMale">
+      <component id="42d49" class="javax.swing.JRadioButton" binding="rbNew">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -180,11 +182,11 @@
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-258"/>
+          <background color="-16777216"/>
           <enabled value="false"/>
           <font size="30"/>
           <foreground color="-16777216"/>
-          <text value="Hello Admin"/>
+          <text value="Welcome To Admin"/>
         </properties>
       </component>
       <component id="3357b" class="javax.swing.JButton" binding="btnAdd">

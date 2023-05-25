@@ -15,7 +15,7 @@ public class Management extends JFrame{
     private JPanel mainPanel;
     private JTextField txtID;
     private JTextField txtName;
-    private JRadioButton rbMale;
+    private JRadioButton rbNew;
     private JRadioButton rbFemale;
     private JComboBox cbCategory;
     private JTextField txtEmail;
@@ -32,8 +32,8 @@ public class Management extends JFrame{
     private JLabel ID;
     private JLabel Name;
     private JLabel Gender;
-    private JLabel Position;
-    private JLabel Email;
+    private JLabel Category;
+    private JLabel Price;
 
     DefaultComboBoxModel cbModel = new DefaultComboBoxModel<>();
     int row = -1;
@@ -113,10 +113,7 @@ public class Management extends JFrame{
         btnExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(JOptionPane.showConfirmDialog(Management.this,
-                        "Are you sure you want to turn off the program?", "Exit?",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+               {
                     Management.this.saveFile();
                     Management.this.setVisible(false);
                     Management.this.dispose();
@@ -176,11 +173,11 @@ public class Management extends JFrame{
     }
 
     public JRadioButton getRbMale() {
-        return rbMale;
+        return rbNew;
     }
 
     public void setRbMale(JRadioButton rbMale) {
-        this.rbMale = rbMale;
+        this.rbNew = rbMale;
     }
 
     public JRadioButton getRbFemale() {
@@ -438,7 +435,7 @@ public class Management extends JFrame{
         if(tbCan.getValueAt(row,2) == "New"){
         rbFemale.setSelected(true);
 
-        }else rbMale.setSelected(true);
+        }else rbNew.setSelected(true);
         //String
         String Position = (String) tbCan.getValueAt(row,3);
         cbCategory.setSelectedItem(Position);

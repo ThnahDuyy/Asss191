@@ -50,8 +50,8 @@ public class ASM_Login extends JFrame
     }
 
     public static void main(String[] args) {
-        JFrame c = new ASM_Login("Login to table Management");
-        c.setSize(600,250);
+        JFrame c = new ASM_Login("Login");
+        c.setSize(700,350);
         c.setLocationRelativeTo(null);
         c.setVisible(true);
 
