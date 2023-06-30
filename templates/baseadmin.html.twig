@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+                Welcome to admmin site!
+                			
+            {% endblock %}
+        </title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <link href="{{ asset('mystyle.css') }}" rel="stylesheet" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+        {% endblock %}
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid"  >
+            <div class="row content" >
+                <div class="col-sm-2 sidenav" style="background-color: #FFE6E6">
+                    <h4>Cellphones - Admin site</h4>
+                    <ul class="nav nav-pills nav-stacked" >
+                        <li class="active">
+                            <a href="/">
+                                <span class="material-icons">
+                                    home
+                                    								
+                                </span>
+                                Back to Shop
+                                							
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_provider_index') }}">
+                                <span class="material-icons">
+                                    source
+                                    								
+                                </span>
+                                Provider
+                                							
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_category_index') }}">
+                                <span class="material-icons">
+                                    category
+                                    								
+                                </span>
+                                Category
+                                							
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_items_index') }}">
+                                <span class="material-icons">
+                                    inventory
+                                    								
+                                </span>
+                                Item
+                                							
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_order_index') }}">
+                                <span class="material-icons">
+                                    view_list
+                                    								
+                                </span>
+                                Order
+                                							
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_bill_index') }}">
+                                <span class="material-icons">
+                                    receipt
+                                    								
+                                </span>
+                                Bill
+                                							
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_user1_index') }}">
+                                <span class="material-icons">
+                                    person
+                                    								
+                                </span>
+                                User
+                                							
+                            </a>
+                        </li>
+                  
+                    {% if app.user %}
+                        <li><a class="nav-link" href="{{ path('app_logout') }}">
+                        <span class="material-icons">
+                        logout
+                                                    
+                    </span>
+                    Logout
+                </li>  </ul>
+                        </a>
+                    {% else %}
+                        <script type="text/javascript">
+							window.location.href = "/login"
+						</script>
+                    {% endif %}
+                    <br>
+                </div>
+                <div class="col-sm-9">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <footer class="container-fluid" style="background-color: #890F0D; text-align: center;">
+            <p>
+                &copy Cellphones 2022
+                				
+            </p>
+        </footer>
+    </body>
+</html>

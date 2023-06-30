@@ -1,0 +1,13 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Edit item - Admin site{% endblock %}
+
+{% block body %}
+<h1>ITEM INFORMATION</h1>
+<hr></hr>
+<h3>EDIT ITEM</h3>
+<br></br>
+
+    {{ include('items/_form.html.twig', {'button_label': 'Update'}) }}
+
+{% endblock %}

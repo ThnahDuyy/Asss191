@@ -1,0 +1,42 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Provider details - Admin site{% endblock %}
+
+{% block body %}
+<h1>PROVIDER INFORMATION</h1>
+<hr></hr>
+<h3>PROVIDER DETAILS</h3>
+<br></br>
+
+        <div class="container">
+        <div class="row col-md-3">
+            <h4>
+                <strong>ID:</strong>
+            </h4>
+        </div>
+        <div class="row col-md-9">
+            <h4>{{ provider.id }}</h4>
+        </div>
+
+        <div class="row col-md-3">
+            <h4>
+                <strong>Name:</strong>
+            </h4>
+        </div>
+        <div class="row col-md-9">
+            <h4>{{ provider.name }}</h4>
+        </div>
+
+        <div class="row col-md-3">
+        <h4>
+            <strong>Address:</strong>
+        </h4>
+    </div>
+    <div class="row col-md-9">
+        <h4>{{ provider.address }}</h4>
+    </div>
+    </div>
+
+    <br></br>
+    <a href="{{ path('app_provider_index') }}" style="background-color: #A1DD70; color: black" class="btn btn-primary">Back to list</a>
+{% endblock %}

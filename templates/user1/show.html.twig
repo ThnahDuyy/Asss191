@@ -1,0 +1,51 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}User details - Admin site{% endblock %}
+
+{% block body %}
+<h1>USER INFORMATION</h1>
+<hr></hr>
+<h3>USER DETAILS</h3>
+<br></br>
+    <div class="container">
+    <div class="row col-md-3">
+        <h4>
+            <strong>ID:</strong>
+        </h4>
+    </div>
+    <div class="row col-md-9">
+        <h4>{{ user1.id }}</h4>
+    </div>
+    
+    <div class="row col-md-3">
+        <h4>
+            <strong>E-mail:</strong>
+        </h4>
+    </div>
+    <div class="row col-md-9">
+        <h4>{{ user1.email }}</h4>
+    </div>
+    
+    <div class="row col-md-3">
+        <h4>
+            <strong>Role:</strong>
+        </h4>
+    </div>
+    <div class="row col-md-9">
+        <h4>ADMIN</h4>
+    </div>
+    
+    <div class="row col-md-3">
+        <h4>
+            <strong>Password:</strong>
+        </h4>
+    </div>
+    <div class="row col-md-9">
+        <h4>{{ user1.password }}</h4>
+    </div>
+    </div>
+    <br></br>
+    
+    <a href="{{ path('app_user1_index') }}" style="background-color: #A1DD70; color: black" class="btn btn-primary">Back to list</a>
+
+{% endblock %}

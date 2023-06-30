@@ -1,0 +1,43 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Bill information - Admin site{% endblock %}
+
+{% block body %}
+<h1>BILL INFORMATION</h1>
+<hr></hr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>FULLNAME</th>
+                <th>PHONE</th>
+                <th>ADDRESS</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bill in bills %}
+            <tr>
+                <td>{{ bill.id }}</td>
+                <td>{{ bill.fullname }}</td>
+                <td>{{ bill.phone }}</td>
+                <td>{{ bill.cusAddress }}</td>
+                <td>
+                    <a href="{{ path('app_bill_show', {'id': bill.id}) }}">
+							<span class="material-icons" style="color:#D9CE3F">visibility</span>
+						</a>
+                        <a href="{{ path('app_bill_deleteone', {'id': bill.id}) }}" onclick="return confirm('Are you sure?')">
+                    <span class="material-icons" style="color:#890F0D">delete</span>
+                </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'baseadmin.html.twig' %}
+{% block title %}
+    User information - Admin site
+{% endblock %}
+{% block body %}
+    <h1>
+        USER INFORMATION
+    </h1>
+    <hr></hr>
+    <a href="{{ path('app_user1_new') }}" style="background-color: #FFE400; color: black" class="btn btn-primary">
+        <span class="material-icons">
+            add
+        </span>
+        REGISTER ACCOUNT
+    </a>
+<br></br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    E-MAIL
+                </th>
+                <th>
+                    PASSWORD
+                </th>
+                <th>
+                    ACTIONS
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user1 in user1s %}
+                <tr>
+                    <td>
+                        {{ user1.id }}
+                    </td>
+                    <td>
+                        {{ user1.email }}
+                    </td>
+                    <td>
+                        {{ user1.password }}
+                    </td>
+                    <td>
+                        <a href="{{ path('app_user1_show', {'id': user1.id}) }}">
+                            <span class="material-icons" style="color:#D9CE3F">
+                                visibility
+                            </span>
+                        </a>
+                        <a href="{{ path('app_user1_edit', {'id': user1.id}) }}" style="color:#E83A14">
+                            <span class="material-icons">
+                                mode_edit
+                            </span>
+                        </a>
+                        <a href="{{ path('app_user1_deleteone', {'id': user1.id}) }}" onclick="return confirm('Are you sure?')">
+                            <span class="material-icons" style="color:#890F0D">
+                                delete
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">
+                        No records found
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

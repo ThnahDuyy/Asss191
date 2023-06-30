@@ -1,0 +1,51 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Item information - Admin site
+{% endblock %}
+
+{% block body %}
+	<h1>ITEM INFORMATION</h1>
+    <hr></hr>
+	<a href="{{ path('app_items_new') }}" style="background-color: #FFE400; color: black" class="btn btn-primary">
+		<span class="material-icons">add</span>ADD</a>
+    <br></br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>DESCRIPTION</th>
+				<th>PRICE</th>
+				<th>IMAGE</th>
+				<th>ACTIONS</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in items %}
+				<tr>
+					<td>{{ item.id }}</td>
+					<td>{{ item.itName }}</td>
+					<td>{{ item.itDescription }}</td>
+					<td>{{ item.itPrice }}$</td>
+					<td><img src="{{vich_uploader_asset(item,'imageFile')}}" width="120" height="90"></td>
+					<td>
+						<a href="{{ path('app_items_show', {'id': item.id}) }}">
+							<span class="material-icons" style="color:#D9CE3F" >visibility</span>
+						</a>
+						<a href="{{ path('app_items_edit', {'id': item.id}) }}" style="color:#E83A14">
+							<span class="material-icons">mode_edit</span>
+						</a>
+						<a href="{{ path('app_items_deleteone', {'id': item.id}) }}" onclick="return confirm('Are you sure?')">
+							<span class="material-icons" style="color:#890F0D">delete</span>
+						</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">No records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

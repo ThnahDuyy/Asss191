@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{%block body %}
+	<div class="container px-4 px-lg-5 mt-5">
+		<h1>Here are some products you might interested in!</h1>
+			<hr />
+			<br></br>
+		<div class="row">
+			{% for item in items %}
+				<div class="col-md-4">
+					<div class="card mb-4">
+						<p>Category: <small class="text-muted">{{item.catCategory}}</small></p>
+						<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New</div>
+						<img src="{{ vich_uploader_asset(item, 'imageFile')}}" alt="{{item.itName}}" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">{{item.itName}}</h5>
+							<p class="card-text">{{item.itDescription}}</p>
+							<div class="d-flex justify-content-between align-item-center">
+								<a href="{{path('items.detail', {id: item.id})}}" style="background-color: #D9CE3F" class="btn btn-outline-dark mt-auto">View details
+									<i class="bi-info-circle-fill"></i>
+								</a>
+								<span class="h5 mt-auto">{{item.itPrice}}$</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

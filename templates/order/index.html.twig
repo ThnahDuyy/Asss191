@@ -1,0 +1,46 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Order information - Admin site{% endblock %}
+
+{% block body %}
+<h1>ORDER INFORMATION</h1>
+<hr></hr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>STATUS</th>
+                <th>ORDER DATE</th>
+                <th>UPDATE DATE</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ order.updatedAt ? order.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_order_show', {'id': order.id}) }}">
+                        <span class="material-icons" style="color:#D9CE3F">visibility</span>
+                    </a>
+                    <a href="{{ path('app_order_edit', {'id': order.id}) }}" style="color:#E83A14">
+                        <span class="material-icons">mode_edit</span>
+                    </a>
+                    <a href="{{ path('app_order_deleteone', {'id': order.id}) }}" onclick="return confirm('Are you sure?')">
+                        <span class="material-icons" style="color:#890F0D">delete</span>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Order details - Admin site
+{% endblock %}
+
+{% block body %}
+	<h1>ORDER INFORMATION</h1>
+	<hr></hr>
+<h3>ORDER DETAILS</h3>
+<br></br><div class="container">
+<div class="row col-md-3">
+	<h4>
+		<strong>ID:</strong>
+	</h4>
+</div>
+<div class="row col-md-9">
+	<h4>{{ order.id }}</h4>
+</div>
+
+<div class="row col-md-3">
+	<h4>
+		<strong>Status:</strong>
+	</h4>
+</div>
+<div class="row col-md-9">
+	<h4>{{ order.status }}</h4>
+</div>
+
+<div class="row col-md-3">
+	<h4>
+		<strong>Order date:</strong>
+	</h4>
+</div>
+<div class="row col-md-9">
+	<h4>{{ order.createdAt ? order.createdAt|date('Y-m-d H:i:s') : '' }}</h4>
+</div>
+
+<div class="row col-md-3">
+	<h4>
+		<strong>Update date:</strong>
+	</h4>
+</div>
+<div class="row col-md-9">
+	<h4>{{ order.updatedAt ? order.updatedAt|date('Y-m-d H:i:s') : '' }}</h4>
+</div>
+</div>
+<br></br>
+<a href="{{ path('app_order_index') }}" style="background-color: #A1DD70; color: black"class="btn btn-primary">Back to list</a>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Category information - Admin site
+{% endblock %}
+
+{% block body %}
+	<h1>CATEGORY INFORMATION</h1>
+	<hr></hr>
+	<a href="{{ path('app_category_new') }}" style="background-color: #FFE400; color: black" class="btn btn-primary">
+		<span class="material-icons">add</span>ADD</a>
+	<br></br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>CATEGORY</th>
+				<th>ACTIONS</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for category in categories %}
+				<tr>
+					<td>{{ category.id }}</td>
+					<td>{{ category.catName }}</td>
+					<td>
+						<a href="{{ path('app_category_show', {'id': category.id}) }}">
+							<span class="material-icons" style="color:#D9CE3F">visibility</span>
+						</a>
+						<a href="{{ path('app_category_edit', {'id': category.id}) }}" style="color:#E83A14">
+							<span class="material-icons">mode_edit</span>
+						</a>
+						<a href="{{ path('app_category_deleteone', {'id': category.id}) }}" onclick="return confirm('Are you sure?')">
+							<span class="material-icons" style="color:#890F0D">delete</span>
+						</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">No records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}
